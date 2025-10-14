@@ -827,13 +827,11 @@ func sendByRepository(result *zoekt.SearchResult, opts *zoekt.SearchOptions, sen
 			if name == "" {
 				continue
 			}
-
 			_, repoSet := filteredRepoURLs[name]
 			url, ok := result.RepoURLs[name]
 			if !repoSet && ok {
 				filteredRepoURLs[name] = url
 			}
-
 			_, fragSet := filteredLineFragments[name]
 			frag, ok := result.LineFragments[name]
 			if !fragSet && ok {
